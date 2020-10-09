@@ -1,0 +1,13 @@
+E:\prj\Task-37\Task-37\bin\Debug\netcoreapp3.1\Task-37.exe
+E:\prj\Task-37\Task-37\bin\Debug\netcoreapp3.1\Task-37.deps.json
+E:\prj\Task-37\Task-37\bin\Debug\netcoreapp3.1\Task-37.runtimeconfig.json
+E:\prj\Task-37\Task-37\bin\Debug\netcoreapp3.1\Task-37.runtimeconfig.dev.json
+E:\prj\Task-37\Task-37\bin\Debug\netcoreapp3.1\Task-37.dll
+E:\prj\Task-37\Task-37\bin\Debug\netcoreapp3.1\Task-37.pdb
+E:\prj\Task-37\Task-37\obj\Debug\netcoreapp3.1\Task-37.csprojAssemblyReference.cache
+E:\prj\Task-37\Task-37\obj\Debug\netcoreapp3.1\Task-37.AssemblyInfoInputs.cache
+E:\prj\Task-37\Task-37\obj\Debug\netcoreapp3.1\Task-37.AssemblyInfo.cs
+E:\prj\Task-37\Task-37\obj\Debug\netcoreapp3.1\Task-37.csproj.CoreCompileInputs.cache
+E:\prj\Task-37\Task-37\obj\Debug\netcoreapp3.1\Task-37.dll
+E:\prj\Task-37\Task-37\obj\Debug\netcoreapp3.1\Task-37.pdb
+E:\prj\Task-37\Task-37\obj\Debug\netcoreapp3.1\Task-37.genruntimeconfig.cache
