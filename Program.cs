@@ -7,34 +7,37 @@ namespace Task_37
     {
         static void Main(string[] args)
         {
+            ZooPark zooPark = new ZooPark();
+            zooPark.Work();
+        }
+    }
+    class ZooPark
+    {
+        private List<Aviary> _aviaries = new List<Aviary>();
+        private void AddAviary(Aviary aviary)
+        {
+            _aviaries.Add(new Aviary(new Boar()));
+            _aviaries.Add(new Aviary(new Tiger()));
+            _aviaries.Add(new Aviary(new Donkey()));
+            _aviaries.Add(new Aviary(new Duck()));
+        }
+        public void Work()
+        {
             bool isExit = true;
-            Aviary aviaryOne = new Aviary(new Boar());
-            Aviary aviaryTwo = new Aviary(new Tiger());
-            Aviary aviaryThree = new Aviary(new Donkey());
-            Aviary aviaryFour = new Aviary(new Duck());
+
+            AddAviary(new Aviary(new Boar()));
+            AddAviary(new Aviary(new Tiger()));
+            AddAviary(new Aviary(new Donkey()));
+            AddAviary(new Aviary(new Duck()));
 
             while (isExit)
             {
                 Console.WriteLine("выберите действие\n\n1 - подойти к первому вольеру\n\n2 - подойти ко второму вольеру\n\n3 - подойти к третьему вольеру\n\n4 - подойти к четвертому вольеру\n\n5 - выйти\n\n");
 
-                switch (Convert.ToInt32(Console.ReadLine()))
-                {
-                    case 1:
-                        aviaryOne.ShowInfo();
-                        break;
-                    case 2:
-                        aviaryTwo.ShowInfo();
-                        break;
-                    case 3:
-                        aviaryThree.ShowInfo();
-                        break;
-                    case 4:
-                        aviaryFour.ShowInfo();
-                        break;
-                    case 5:
-                        isExit = false;
-                        break;
-                }
+                int userInput = (Convert.ToInt32(Console.ReadLine()));
+
+                _aviaries[userInput - 1].ShowInfo();
+
                 Console.WriteLine("\nДля продолжения нажмите любую клавишу...");
                 Console.ReadKey();
                 Console.Clear();
@@ -80,17 +83,6 @@ namespace Task_37
         protected string Name;
         private string _gender;
         protected string Noise;
-        public string Gender
-        {
-            get
-            {
-                return _gender;
-            }
-        }
-        public void ShowInfo()
-        {
-            Console.WriteLine($"Это животное называется {Name}, оно издает звук {Noise}");
-        }
         public Animal()
         {
             Random rand = new Random();
@@ -106,6 +98,18 @@ namespace Task_37
                     break;
             }
         }
+        public string Gender
+        {
+            get
+            {
+                return _gender;
+            }
+        }
+        public void ShowInfo()
+        {
+            Console.WriteLine($"Это животное называется {Name}, оно издает звук {Noise}");
+        }
+        
     }
     class Boar : Animal
     {
