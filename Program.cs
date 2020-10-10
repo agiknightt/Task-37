@@ -16,10 +16,7 @@ namespace Task_37
         private List<Aviary> _aviaries = new List<Aviary>();
         private void AddAviary(Aviary aviary)
         {
-            _aviaries.Add(new Aviary(new Boar()));
-            _aviaries.Add(new Aviary(new Tiger()));
-            _aviaries.Add(new Aviary(new Donkey()));
-            _aviaries.Add(new Aviary(new Duck()));
+            _aviaries.Add(aviary);            
         }
         public void Work()
         {
@@ -34,7 +31,7 @@ namespace Task_37
             {
                 Console.WriteLine("выберите действие\n\n1 - подойти к первому вольеру\n\n2 - подойти ко второму вольеру\n\n3 - подойти к третьему вольеру\n\n4 - подойти к четвертому вольеру\n\n5 - выйти\n\n");
 
-                int userInput = (Convert.ToInt32(Console.ReadLine()));
+                int userInput = Convert.ToInt32(Console.ReadLine());
 
                 _aviaries[userInput - 1].ShowInfo();
 
