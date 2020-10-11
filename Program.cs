@@ -20,14 +20,12 @@ namespace Task_37
             {
                 Console.WriteLine("выберите действие\n\n");
 
-                for (int i = 0; i < 4; i++)
-                {
-                    Console.WriteLine($"{i + 1} - подойти к  вольеру № {i + 1}\n\n");
-                }
+                zooPark.OutputCountAviary();
 
                 Console.WriteLine("5 - выйти\n\n");
 
                 int userInput = Convert.ToInt32(Console.ReadLine());
+
                 if(userInput != 5)
                 {
                     zooPark.ShowAviary(userInput - 1);
@@ -47,11 +45,24 @@ namespace Task_37
         private List<Aviary> _aviaries = new List<Aviary>();
         public void AddAviary(Aviary aviary)
         {
-            _aviaries.Add(aviary);            
+            _aviaries.Add(aviary);
         }
         public void ShowAviary(int numberAviary)
         {
-            _aviaries[numberAviary].ShowInfo();
+            for (int i = 0; i < _aviaries.Count; i++)
+            {
+                if(numberAviary == i)
+                {
+                    _aviaries[numberAviary].ShowInfo();
+                }
+            }           
+        }
+        public void OutputCountAviary()
+        {
+            for (int i = 0; i < _aviaries.Count; i++)
+            {
+                Console.WriteLine($"{i + 1} - подойти к  вольеру № {i + 1}\n\n");
+            }
         }
     }
     class Aviary
