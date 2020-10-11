@@ -8,37 +8,50 @@ namespace Task_37
         static void Main(string[] args)
         {
             ZooPark zooPark = new ZooPark();
-            zooPark.Work();
+
+            bool isExit = true;
+
+            zooPark.AddAviary(new Aviary(new Boar()));
+            zooPark.AddAviary(new Aviary(new Tiger()));
+            zooPark.AddAviary(new Aviary(new Donkey()));
+            zooPark.AddAviary(new Aviary(new Duck()));
+
+            while (isExit)
+            {
+                Console.WriteLine("выберите действие\n\n");
+
+                for (int i = 0; i < 4; i++)
+                {
+                    Console.WriteLine($"{i + 1} - подойти к  вольеру № {i + 1}\n\n");
+                }
+
+                Console.WriteLine("5 - выйти\n\n");
+
+                int userInput = Convert.ToInt32(Console.ReadLine());
+                if(userInput != 5)
+                {
+                    zooPark.ShowAviary(userInput - 1);
+                }
+                else
+                {
+                    isExit = false;
+                }
+                Console.WriteLine("\nДля продолжения нажмите любую клавишу...");
+                Console.ReadKey();
+                Console.Clear();
+            }
         }
     }
     class ZooPark
     {
         private List<Aviary> _aviaries = new List<Aviary>();
-        private void AddAviary(Aviary aviary)
+        public void AddAviary(Aviary aviary)
         {
             _aviaries.Add(aviary);            
         }
-        public void Work()
+        public void ShowAviary(int numberAviary)
         {
-            bool isExit = true;
-
-            AddAviary(new Aviary(new Boar()));
-            AddAviary(new Aviary(new Tiger()));
-            AddAviary(new Aviary(new Donkey()));
-            AddAviary(new Aviary(new Duck()));
-
-            while (isExit)
-            {
-                Console.WriteLine("выберите действие\n\n1 - подойти к первому вольеру\n\n2 - подойти ко второму вольеру\n\n3 - подойти к третьему вольеру\n\n4 - подойти к четвертому вольеру\n\n5 - выйти\n\n");
-
-                int userInput = Convert.ToInt32(Console.ReadLine());
-
-                _aviaries[userInput - 1].ShowInfo();
-
-                Console.WriteLine("\nДля продолжения нажмите любую клавишу...");
-                Console.ReadKey();
-                Console.Clear();
-            }
+            _aviaries[numberAviary].ShowInfo();
         }
     }
     class Aviary
@@ -75,7 +88,7 @@ namespace Task_37
             Console.WriteLine($"\nВ этом вольере таких животных {_animals.Count}, {man} мужского пола, {woman} женского пола\n");            
         }
     }
-    class Animal 
+    abstract class Animal 
     {
         protected string Name;
         private string _gender;
