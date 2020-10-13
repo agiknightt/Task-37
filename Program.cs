@@ -20,7 +20,7 @@ namespace Task_37
             {
                 Console.WriteLine("выберите действие\n\n");
 
-                zooPark.OutputCountAviary();
+                zooPark.OutputChoiceAviary();
 
                 Console.WriteLine("5 - выйти\n\n");
 
@@ -28,7 +28,7 @@ namespace Task_37
 
                 if(userInput != 5)
                 {
-                    zooPark.ShowAviary(userInput - 1);
+                    zooPark.ShowInfoAviary(userInput - 1);
                 }
                 else
                 {
@@ -47,17 +47,14 @@ namespace Task_37
         {
             _aviaries.Add(aviary);
         }
-        public void ShowAviary(int numberAviary)
+        public void ShowInfoAviary(int numberAviary)
         {
-            for (int i = 0; i < _aviaries.Count; i++)
+            if (numberAviary >= 0 && numberAviary <= _aviaries.Count)
             {
-                if(numberAviary == i)
-                {
-                    _aviaries[numberAviary].ShowInfo();
-                }
-            }           
+                _aviaries[numberAviary].ShowInfo();
+            }                      
         }
-        public void OutputCountAviary()
+        public void OutputChoiceAviary()
         {
             for (int i = 0; i < _aviaries.Count; i++)
             {
