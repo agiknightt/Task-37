@@ -52,7 +52,11 @@ namespace Task_37
             if (numberAviary >= 0 && numberAviary <= _aviaries.Count)
             {
                 _aviaries[numberAviary].ShowInfo();
-            }                      
+            }
+            else
+            {
+                Console.WriteLine("Такого вольера не существует.");
+            }
         }
         public void OutputChoiceAviary()
         {
